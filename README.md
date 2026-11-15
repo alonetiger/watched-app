@@ -1,7 +1,29 @@
-# watched (Android)
+<p align="center">
+  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" width="96" alt="watched icon">
+</p>
 
-A native Android shell for **https://watched.cx** that plays the site's video
-inside the app and uses the site's own look.
+<h1 align="center">watched for Android</h1>
+
+<p align="center">
+  A native Android app for <b>https://watched.cx</b> that plays the site's video
+  inside the app and uses the site's own look.
+</p>
+
+<p align="center">
+  <a href="https://github.com/alonetiger/watched-app/releases/latest/download/watched.apk">
+    <img src="https://img.shields.io/badge/Download-APK-e50914?style=for-the-badge&logo=android&logoColor=white&labelColor=0a0a0a" height="48" alt="Download APK">
+  </a>
+  <br>
+  <sub>Android 7.0+ · <a href="https://github.com/alonetiger/watched-app/releases">All releases</a></sub>
+</p>
+
+## Install
+
+1. Tap **Download APK** above on your phone.
+2. Open `watched.apk` and allow installs from unknown sources when Android asks.
+3. Open **watched** from your app drawer.
+
+The button always fetches the newest release.
 
 ## What it does
 
@@ -54,7 +76,15 @@ unknown sources), or with a USB cable:
 ```
 
 Keep `keystore/` and `keystore.properties` safe: updates must be signed with the
-same key to install over an existing copy.
+same key to install over an existing copy. They are git-ignored and never pushed.
+
+## Publishing a new version
+
+1. Bump `versionCode` and `versionName` in `app/build.gradle.kts`.
+2. Run `.\build.ps1`.
+3. Copy `app-release.apk` to a file named `watched.apk` and attach it to a new
+   GitHub release (`gh release create v1.x.y watched.apk`). Keep the asset name
+   `watched.apk` so the Download APK button keeps working.
 
 ## Not included
 
